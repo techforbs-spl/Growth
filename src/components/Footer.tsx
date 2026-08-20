@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-14 border-b border-paper/10 pb-16 lg:grid-cols-[1.3fr_2fr]">
           <div>
-            <Link href="#top" className="flex items-center gap-2.5 font-display text-[1.05rem] font-bold tracking-tight text-paper">
+            <Link href="#top" className="flex items-center gap-2.5 font-display text-[1.05rem] font-bold text-paper">
               <LogoMark size={28} shellColor="#ffffff" />
               The Growth Inc.
             </Link>

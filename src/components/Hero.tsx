@@ -23,7 +23,7 @@ export default function Hero() {
           </p>
         </Reveal>
 
-        <h1 className="max-w-[760px] font-display text-[2.7rem] font-semibold leading-[1.06] tracking-tight text-dark lg:text-[4.2rem]">
+        <h1 className="max-w-[760px] font-display text-[2.7rem] font-semibold leading-[1.06] text-dark lg:text-[4.2rem]">
           <RevealWords text="Marketing paced to how your business" />{" "}
           <RevealWords
             text="actually grows."

@@ -40,7 +40,7 @@ export default function Header() {
       >
         <Link
           href="#top"
-          className="focus-ring flex items-center gap-2.5 font-display text-[1.05rem] font-bold tracking-tight text-dark"
+          className="focus-ring flex items-center gap-2.5 font-display text-[1.05rem] font-bold text-dark"
         >
           <LogoMark size={28} />
           The Growth Inc.
