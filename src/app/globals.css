@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette, exact from brand guide */
+  --white: #ffffff;
+  --dark: #202020;
+  --green: #708238;
+
+  /* Working tints derived from the three brand colors for layout depth */
+  --paper: #ffffff;
+  --paper-deep: #f2f3ee;
+  --dark-soft: #2b2b2b;
+  --dark-deep: #151515;
+  --green-deep: #566629;
+  --green-soft: #9cb06a;
+  --green-tint: #eef1e6;
+  --line: rgba(32, 32, 32, 0.14);
+  --line-on-dark: rgba(255, 255, 255, 0.16);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-dark: var(--dark);
+  --color-dark-soft: var(--dark-soft);
+  --color-dark-deep: var(--dark-deep);
+  --color-green: var(--green);
+  --color-green-deep: var(--green-deep);
+  --color-green-soft: var(--green-soft);
+  --color-green-tint: var(--green-tint);
+
+  --font-display: "Rubik One", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--dark);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--green);
+  color: var(--white);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Signature: slowly drifting ambient glow orbs (from the Dusk system, retinted) */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  pointer-events: none;
+  animation: drift 18s ease-in-out infinite;
+}
+.glow-orb.slow {
+  animation-duration: 26s;
+}
+.glow-orb.reverse {
+  animation-direction: alternate-reverse;
+}
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -30px) scale(1.08);
+  }
+  100% {
+    transform: translate(-18px, 16px) scale(0.96);
+  }
+}
+
+/* Signature: rotating stamp badge for credibility */
+.stamp-ring {
+  animation: spin 22s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fill-bar {
+  position: relative;
+  height: 3px;
+  background: var(--line);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.fill-bar__inner {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--green);
+  border-radius: 2px;
+  transition: width 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .glow-orb {
+    animation: none !important;
+  }
+  .stamp-ring {
+    animation: none !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
