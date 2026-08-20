@@ -24,10 +24,18 @@ export function PrimaryCTA({
     setPos({ x, y });
   };
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href === "#book") {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent("open-calendly"));
+    }
+  };
+
   return (
     <Link
       ref={ref}
       href={href}
+      onClick={handleClick}
       onMouseMove={onMove}
       onMouseLeave={() => setPos({ x: 0, y: 0 })}
       style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
@@ -48,9 +56,17 @@ export function SecondaryCTA({
   href?: string;
   className?: string;
 }) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href === "#book") {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent("open-calendly"));
+    }
+  };
+
   return (
     <Link
       href={href}
+      onClick={handleClick}
       className={`focus-ring group inline-flex items-center gap-2 font-body text-[0.95rem] font-semibold text-dark transition-colors hover:text-green-deep ${className}`}
     >
       <span className="border-b border-dark/30 pb-0.5 group-hover:border-green-deep">
