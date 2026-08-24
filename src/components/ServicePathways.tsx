@@ -5,29 +5,33 @@ const SERVICES = [
     icon: <IconRadar />,
     tag: "Primary",
     name: "AI SEO",
-    problem: "Your organic pipeline stalled once generative answers absorbed the queries you used to rank for.",
-    deliverable: "Entity-led content architecture, technical crawl health, visibility tracking across AI overviews.",
+    problem: "Your buyers are asking questions. Make sure you are part of the answer.",
+    deliverable: "Search has changed. Buyers research across Google, ChatGPT, Perplexity, Gemini and Google AI Overviews. We help your business become easier to discover, easier to understand and easier to trust wherever that research starts. Technical foundations, source-worthy content, entity signals and visibility tracking across every AI platform that matters.",
+    cta: "Explore AI SEO",
   },
   {
     icon: <IconTarget />,
-    tag: "Primary",
-    name: "Paid Search",
-    problem: "Spend keeps climbing on branded terms while new-account pipeline stays flat.",
-    deliverable: "Intent-mapped structure, first-party conversion tracking, weekly bid governance.",
+    tag: "Secondary",
+    name: "Google Ads",
+    problem: "Google Ads should create customers. Not a very expensive habit.",
+    deliverable: "If cost per lead keeps rising or branded traffic eats the budget, you need tighter intent mapping, better tracking and weekly decisions based on what is actually making money. Not another round of random optimisations.",
+    cta: "Explore Google Ads",
   },
   {
     icon: <IconLayers />,
-    tag: "Primary",
-    name: "Paid Social",
-    problem: "Meta and LinkedIn generate clicks that sales doesn't recognize as real demand.",
-    deliverable: "ICP-built audience and creative testing, lead scoring into your CRM.",
+    tag: "Secondary",
+    name: "Meta Ads",
+    problem: "Stop paying for attention your sales team cannot use.",
+    deliverable: "Meta Ads can build demand before someone knows exactly what they are searching for. We combine clear ICP targeting, creative testing and real sales feedback so the platform learns what a valuable prospect looks like, not just what gets a quick click.",
+    cta: "Explore Meta Ads",
   },
   {
     icon: <IconFrame />,
-    tag: "Supporting",
-    name: "Website Systems",
-    problem: "Your site converts traffic other channels already paid to bring — or it doesn't.",
-    deliverable: "Conversion-focused rebuilds built to support the campaigns above.",
+    tag: "Secondary",
+    name: "ChatGPT Ads",
+    problem: "Your next customer may ask ChatGPT before they ask Google.",
+    deliverable: "Buyers use AI to research problems and shortlist options before they ever fill out a form. We help you build a practical plan for that shift, with clear measurement and a conversion path behind it. No science-fiction promises. Just a clear way to test where AI-led discovery creates a real commercial advantage.",
+    cta: "Explore ChatGPT Ads",
   },
 ];
 
@@ -35,12 +39,21 @@ export default function ServicePathways() {
   return (
     <section id="services" className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
-        <Reveal>
-          <p className="eyebrow text-green-deep">Where to start</p>
-          <h2 className="mt-5 max-w-[560px] font-display text-[2rem] font-semibold leading-[1.15] text-dark lg:text-[2.5rem]">
-            Four levers. One system behind them.
-          </h2>
-        </Reveal>
+        <div className="max-w-[800px]">
+          <Reveal>
+            <p className="eyebrow text-green-deep">Pick the problem. The channel comes second.</p>
+            <h2 className="mt-5 font-display text-[2.1rem] font-semibold leading-[1.15] text-dark lg:text-[2.7rem]">
+              One visibility engine. More ways to turn it into customers.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <p className="mt-6 max-w-[620px] font-body text-[1rem] leading-relaxed text-dark/75">
+              Buyers begin with questions. The question might land in Google, an AI Overview, ChatGPT, Perplexity, Gemini or Copilot. Your visibility needs to meet them there. 
+              <br /><br />
+              We will tell you if a channel is not the answer. It is cheaper than pretending otherwise.
+            </p>
+          </Reveal>
+        </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((s, i) => (
@@ -54,12 +67,12 @@ export default function ServicePathways() {
                   <span className="eyebrow text-dark/35">{s.tag}</span>
                 </div>
                 <h3 className="mt-6 font-body text-[1.2rem] font-semibold text-dark">{s.name}</h3>
-                <p className="mt-3 font-body text-[0.87rem] leading-relaxed text-dark/60">{s.problem}</p>
-                <p className="mt-5 border-t border-dark/10 pt-4 font-body text-[0.8rem] leading-relaxed text-dark/70">
+                <p className="mt-3 font-body text-[0.87rem] leading-relaxed text-dark/65 min-h-[50px]">{s.problem}</p>
+                <p className="mt-5 border-t border-dark/10 pt-4 font-body text-[0.8rem] leading-relaxed text-dark/60 flex-1">
                   {s.deliverable}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 font-body text-[0.85rem] font-medium text-green-deep opacity-0 transition-opacity group-hover:opacity-100">
-                  Explore this service ↗
+                <span className="mt-6 inline-flex items-center gap-2 font-body text-[0.85rem] font-medium text-green-deep transition-all group-hover:translate-x-1">
+                  {s.cta} ↗
                 </span>
               </a>
             </Reveal>

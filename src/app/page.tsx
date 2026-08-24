@@ -6,7 +6,6 @@ import CaseStudies from "@/components/CaseStudies";
 import ServicePathways from "@/components/ServicePathways";
 import OperatingModel from "@/components/OperatingModel";
 import ProcessJourney from "@/components/ProcessJourney";
-import TeamCredibility from "@/components/TeamCredibility";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -25,7 +24,6 @@ export default function Home() {
         <ServicePathways />
         <OperatingModel />
         <ProcessJourney />
-        <TeamCredibility />
         <Testimonials />
         <FAQ />
         <FinalCTA />

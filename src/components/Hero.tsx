@@ -19,39 +19,46 @@ export default function Hero() {
         <Reveal>
           <p className="eyebrow mb-6 flex items-center gap-2 text-green-deep">
             <span className="h-[5px] w-[5px] rounded-full bg-green-soft" />
-            For B2B teams doing $5–50M in revenue
+            For businesses tired of being invisible when buyers search for what you do
           </p>
         </Reveal>
 
-        <h1 className="max-w-[760px] font-display text-[2.7rem] font-semibold leading-[1.06] text-dark lg:text-[4.2rem]">
-          <RevealWords text="Marketing paced to how your business" />{" "}
+        <h1 className="max-w-[820px] font-display text-[2.7rem] font-semibold leading-[1.06] text-dark lg:text-[4.0rem]">
+          <RevealWords text="When buyers ask AI who to trust, make" />{" "}
           <RevealWords
-            text="actually grows."
+            text="sure your name is part of the answer."
             delay={0.35}
             className="text-green-deep"
           />
         </h1>
 
         <Reveal delay={0.5}>
-          <p className="mt-7 max-w-[520px] font-body text-[1.08rem] leading-relaxed text-dark/70">
-            The Growth Inc. runs AI SEO, paid search, paid social and the websites
-            behind them for mid-market B2B companies — reporting on
-            pipeline and cost of acquisition, not impressions.
-          </p>
+          <div className="mt-7 max-w-[620px] font-body text-[1.08rem] leading-relaxed text-dark/70 space-y-4">
+            <p>
+              Buyers are no longer only typing into Google. They ask ChatGPT, Perplexity, Gemini and Google AI Overviews who to trust, what to buy and which option makes sense.
+            </p>
+            <p>
+              If your business is missing from those conversations, somebody else is getting the shortlist.
+            </p>
+            <p>
+              The Growth Inc. helps you earn that visibility. Then turns it into qualified demand with Google Ads, Meta Ads and ChatGPT Ads.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.6}>
           <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <PrimaryCTA href="#book">Book Now</PrimaryCTA>
-            <SecondaryCTA href="#work">See the results</SecondaryCTA>
+            <PrimaryCTA href="#book">Get in Touch</PrimaryCTA>
+            <SecondaryCTA href="#work">See the Proof</SecondaryCTA>
           </div>
         </Reveal>
 
         <Reveal delay={0.7}>
-          <div className="mt-16 grid max-w-[640px] grid-cols-3 gap-8 border-t border-dark/10 pt-8">
-            <Stat value="4.9/5" label="62 verified engagements" />
-            <Stat value="2.4×" label="Median pipeline growth" />
-            <Stat value="11 days" label="Kickoff to first launch" />
+          <div className="mt-16 grid max-w-[840px] grid-cols-2 gap-8 border-t border-dark/10 pt-8 sm:grid-cols-4">
+            <Stat value="40+" label="Projects Delivered" />
+            <Stat value="7+" label="AI SEO Engagements" />
+            <Stat value="~25%" label="Average Enquiry Increase" />
+            <Stat value="Under 5 Months" label="To First AI Citation" />
           </div>
         </Reveal>
       </div>
@@ -60,12 +67,17 @@ export default function Hero() {
 }
 
 function Stat({ value, label }: { value: string; label: string }) {
+  const isLong = value.length > 8;
   return (
     <div>
-      <p className="tabular font-display text-[1.4rem] font-semibold text-dark">
+      <p className={`tabular font-display font-semibold text-dark leading-none ${
+        isLong 
+          ? "text-[1.05rem] sm:text-[1.2rem] lg:text-[1.4rem] whitespace-nowrap" 
+          : "text-[1.4rem]"
+      }`}>
         {value}
       </p>
-      <p className="mt-1 font-body text-[0.78rem] leading-snug text-dark/55">
+      <p className="mt-2.5 font-body text-[0.78rem] leading-snug text-dark/55">
         {label}
       </p>
     </div>

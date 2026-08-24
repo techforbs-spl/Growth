@@ -4,13 +4,13 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 const FAQS = [
-  { q: "What size company do you actually work best with?", a: "Mostly B2B companies doing $5–50M in annual revenue with an existing sales team. If you're pre-revenue, we're likely not the right fit — and we'll say so on the first call." },
-  { q: "What's the minimum commitment?", a: "A 6-month initial term for AI SEO and web systems, since those compound over time. Paid media can start at 3 months." },
-  { q: "Do you guarantee rankings or a specific ROAS?", a: "No. Anyone guaranteeing a number without seeing your account first is guessing. We'll give a realistic range before you sign anything." },
-  { q: "Who owns the accounts and the data?", a: "You do. Ad accounts, analytics, and CMS access stay under your organization from day one." },
-  { q: "How much internal time will this actually take?", a: "Roughly 2–3 hours a week in month one, dropping to about an hour a week for ongoing approvals after that." },
-  { q: "What if performance dips for a quarter?", a: "It happens, especially through algorithm updates. Our contracts include a defined review checkpoint rather than automatic renewal." },
-  { q: "Can you work alongside our existing in-house marketer?", a: "Yes — most accounts have one. We typically run specialist channel work while your in-house lead owns brand and stakeholders." },
+  { q: "What kind of businesses do you work best with?", a: "We work best with businesses that have a real growth target, a product or service people already buy and the willingness to look honestly at the numbers. If we are not the right fit, we will tell you on the first conversation. It saves everyone a lot of time." },
+  { q: "What is the minimum engagement?", a: "For AI SEO, we work on a minimum 4-month engagement. That is the realistic window to fix the technical foundation, build the content and entity signals, and see meaningful citation movement across AI systems and search. For Google Ads and Meta Ads, a minimum 3-month term. We will tell you the right timeframe on the first call, before you commit to anything." },
+  { q: "Do you guarantee rankings or results?", a: "No. Anyone promising a specific result before understanding your account, market, offer and sales process is guessing with confidence. We commit to a clear plan, transparent measurement, proper testing and an honest view of what the numbers say." },
+  { q: "Who owns the accounts and data?", a: "You do. Advertising accounts, analytics and CRM access stay under your ownership from day one. You are hiring expertise, not renting access to your own growth engine." },
+  { q: "How much time will you need from our team?", a: "Month one is typically 3 to 4 hours a week while we work through onboarding, access and the initial brief. From month two onward, it drops to 1 to 2 hours a week for approvals, reviews and feedback. We will not ask for time we do not have a clear reason for using." },
+  { q: "What if we are already working with another agency or running our own ads?", a: "That is a common starting point. We can review what is already running and give you an honest read on what is working, what is not and where the biggest opportunity sits. There is no obligation to change anything until it makes sense to." },
+  { q: "Can you work alongside our in-house marketer or sales team?", a: "Yes. Most of our engagements involve an in-house team. We run specialist channel work while your team keeps ownership of brand, customers and internal priorities. That combination usually produces the best results." },
 ];
 
 export default function FAQ() {
@@ -19,10 +19,10 @@ export default function FAQ() {
   return (
     <section className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-[860px] px-6 lg:px-10">
-        <Reveal>
-          <p className="eyebrow text-green-deep">Before you book</p>
-          <h2 className="mt-5 font-display text-[2rem] font-semibold leading-[1.15] text-dark lg:text-[2.4rem]">
-            Honest answers to the questions we get on every discovery call.
+        <Reveal className="text-center flex flex-col items-center">
+          <p className="eyebrow text-green-deep text-center">Before you reach out</p>
+          <h2 className="mt-5 mx-auto max-w-[620px] font-display text-[2rem] font-semibold leading-[1.15] text-dark lg:text-[2.4rem] text-center">
+            Straight answers are more useful than a big sales pitch.
           </h2>
         </Reveal>
 
@@ -62,12 +62,12 @@ export default function FAQ() {
         </div>
 
         <Reveal delay={0.08}>
-          <p className="mt-10 font-body text-[0.88rem] text-dark/55">
+          <p className="mt-10 font-body text-[0.88rem] text-dark/55 text-center sm:text-left">
             Something else on your mind?{" "}
             <a href="#book" className="underline decoration-dark/30 hover:text-green-deep">
-              Ask it on the call
+              Ask it when you reach out
             </a>{" "}
-            — there's no pitch deck waiting for you.
+            — there is no pitch deck waiting on the other side.
           </p>
         </Reveal>
       </div>

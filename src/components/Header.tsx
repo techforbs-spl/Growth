@@ -7,10 +7,10 @@ import { LogoMark } from "./LogoMark";
 
 const NAV = [
   { label: "AI SEO", href: "#services" },
-  { label: "Paid Media", href: "#services" },
-  { label: "Web Systems", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Method", href: "#method" },
+  { label: "Google Ads and Meta Ads", href: "#services" },
+  { label: "ChatGPT Ads", href: "#services" },
+  { label: "Proof", href: "#work" },
+  { label: "How We Work", href: "#method" },
 ];
 
 export default function Header() {
@@ -61,7 +61,7 @@ export default function Header() {
 
         <div className="hidden lg:block">
           <PrimaryCTA href="#book" className="!px-5 !py-2.5 text-[0.85rem]">
-            Book Now
+            Get in Touch
           </PrimaryCTA>
         </div>
 
@@ -89,7 +89,7 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <PrimaryCTA href="#book" className="mt-2 w-fit">Book Now</PrimaryCTA>
+            <PrimaryCTA href="#book" className="mt-2 w-fit">Get in Touch</PrimaryCTA>
           </div>
         </div>
       )}

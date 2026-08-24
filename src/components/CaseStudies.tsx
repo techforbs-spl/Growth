@@ -10,42 +10,59 @@ export default function CaseStudies() {
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <Reveal>
-            <p className="eyebrow text-green-deep">Evidence, not adjectives</p>
-            <h2 className="mt-5 max-w-[560px] font-display text-[2rem] font-semibold leading-[1.15] text-dark lg:text-[2.5rem]">
-              Three accounts, three different starting problems.
+            <p className="eyebrow text-green-deep">The work speaks louder than the pitch</p>
+            <h2 className="mt-5 max-w-[620px] font-display text-[2rem] font-semibold leading-[1.15] text-dark lg:text-[2.5rem]">
+              Different businesses. Different starting points. One goal: get growth moving and keep it moving.
             </h2>
           </Reveal>
           <Reveal delay={0.06}>
-            <SecondaryCTA href="#book">Read the full case library</SecondaryCTA>
+            <SecondaryCTA href="#book">See the proof</SecondaryCTA>
           </Reveal>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <Reveal className="lg:row-span-2">
-            <TiltCard className="flex h-full flex-col justify-between rounded-3xl bg-dark p-9 text-paper">
-              <FeaturedContent />
-            </TiltCard>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <TiltCard className="flex h-full flex-col justify-between rounded-3xl border border-dark/10 bg-paper p-7">
-              <CompactContent
-                tag="Industrial · SEO"
-                client="Cascade Metals"
-                problem="Organic traffic flat for 3 years despite monthly blog output."
-                outcome="+164% organic sessions, 41 page-one terms"
-              />
-            </TiltCard>
-          </Reveal>
-          <Reveal delay={0.14}>
-            <TiltCard className="flex h-full flex-col justify-between rounded-3xl border border-dark/10 bg-paper p-7">
-              <CompactContent
-                tag="Healthcare · Paid Social"
-                client="Ambit Health"
-                problem="Meta spend rising faster than qualified demo bookings."
-                outcome="Cost per demo down 47%, spend unchanged"
-              />
-            </TiltCard>
-          </Reveal>
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 items-start">
+          <div className="lg:sticky lg:top-24">
+            <Reveal>
+              <TiltCard className="flex flex-col justify-between rounded-3xl bg-dark p-9 text-paper">
+                <FeaturedContent />
+              </TiltCard>
+            </Reveal>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            <Reveal delay={0.08}>
+              <TiltCard className="flex flex-col justify-between rounded-3xl border border-dark/10 bg-paper p-7">
+                <CompactContent
+                  tag="Home and Housing E-commerce · Collection Page SEO · US and Australia"
+                  problem="A US-based home and housing products brand had collection pages that had been live for years and were contributing almost nothing to organic traffic. Faceted navigation was creating duplicate URLs without canonical handling. No internal linking connected editorial content to commercial pages. Keyword cannibalization was suppressing every collection page at the same time."
+                  fixes={[
+                    "Collection page content rebuilt around commercial buyer intent",
+                    "Canonical tags implemented across all filtered URL variants",
+                    "Internal linking matrix from editorial content to collection pages",
+                    "Full cannibalization audit with page consolidation and redirects",
+                    "Breadcrumb and Product Collection schema added"
+                  ]}
+                  outcome="18% year-on-year revenue growth. Sessions trending from 28,000 to 57,000 per month in twelve months."
+                />
+              </TiltCard>
+            </Reveal>
+            <Reveal delay={0.14}>
+              <TiltCard className="flex flex-col justify-between rounded-3xl border border-dark/10 bg-paper p-7">
+                <CompactContent
+                  tag="On-demand Home Healthcare · Technical SEO + AI SEO + Google Ads · Dubai, UAE"
+                  problem="An on-demand home healthcare service in Dubai was sitting at an average search position of 13.1 across its highest-value queries. 726,000 impressions in six months but a 0.5% CTR because it was ranking page two on every term that mattered. The site had no medical schema, no structured credential signals and no content built for how Google constructs AI Overview recommendations."
+                  fixes={[
+                    "MedicalBusiness, Physician and LocalBusiness schema implemented",
+                    "DHA licensing and doctor credentials structured and citable within page content",
+                    "Answer-first content built around the exact query structures used in Google AI Overviews",
+                    "Technical crawl issues resolved and Core Web Vitals improved for mobile-first Dubai audience",
+                    "Google Ads running in parallel to capture immediate demand while organic authority built"
+                  ]}
+                  outcome="First recommendation in Google AI Overview for the category's highest-value query. 726,000 impressions in six months with an unbroken upward trajectory from the month work started."
+                />
+              </TiltCard>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>
@@ -92,36 +109,34 @@ function FeaturedContent() {
     <>
       <div>
         <div className="flex items-center justify-between">
-          <span className="eyebrow text-green-soft">Logistics · PPC + SEO</span>
-          <span className="eyebrow text-paper/40">Northline Freight</span>
+          <span className="eyebrow text-green-soft">Outsourced Accounting and Bookkeeping · Technical SEO + AI SEO · Australia and Canada</span>
         </div>
-        <p className="mt-8 max-w-[420px] font-body text-[1rem] leading-relaxed text-paper/75">
-          Northline had a 9-person sales team and a marketing budget entirely
-          funding branded search. No pipeline attribution existed beyond
-          &quot;the website.&quot;
+        <p className="mt-8 max-w-[520px] font-body text-[0.95rem] leading-relaxed text-paper/75">
+          An outsourced accounting and bookkeeping firm serving Australian and Canadian markets came with a site search engines could barely crawl. Pages were not indexed. Internal linking did not exist. And the business was completely absent from every AI search tool buyers were using to find providers.
         </p>
+        <div className="mt-6">
+          <p className="eyebrow text-green-soft text-[0.75rem]">What we fixed:</p>
+          <ul className="mt-3.5 space-y-2 font-body text-[0.85rem] leading-relaxed text-paper/60 list-disc list-inside">
+            <li>Crawlability and indexation gaps across all service pages</li>
+            <li>Internal linking architecture connecting service pages, location pages and supporting content</li>
+            <li>Organisation and Service schema so AI systems could identify and trust the business as a real entity</li>
+            <li>Comparison content targeting the exact queries buyers type into ChatGPT, Gemini and Google AI Overviews</li>
+            <li>Regional credibility signals for Australian and Canadian markets</li>
+          </ul>
+        </div>
         <div className="mt-8 grid grid-cols-2 gap-6 border-t border-paper/10 pt-6">
           <div>
-            <p className="tabular font-display text-[2.2rem] font-semibold text-green-soft">3.1×</p>
-            <p className="mt-1 font-body text-[0.8rem] text-paper/55">Sales-qualified pipeline</p>
+            <p className="tabular font-display text-[1.8rem] font-semibold text-green-soft">Under 5</p>
+            <p className="mt-1 font-body text-[0.8rem] text-paper/55">Months to first AI citation</p>
           </div>
           <div>
-            <p className="tabular font-display text-[2.2rem] font-semibold text-green-soft">52%</p>
-            <p className="mt-1 font-body text-[0.8rem] text-paper/55">Lower cost per opportunity</p>
+            <p className="tabular font-display text-[1.8rem] font-semibold text-green-soft">~25%</p>
+            <p className="mt-1 font-body text-[0.8rem] text-paper/55">Increase in inbound enquiries after AI visibility</p>
           </div>
         </div>
       </div>
-      <div className="mt-10 border-t border-paper/10 pt-6">
-        <p className="font-body text-[1.05rem] font-semibold leading-snug text-paper/90">
-          &ldquo;We finally have a marketing report our CFO reads without
-          translation.&rdquo;
-        </p>
-        <p className="mt-3 font-body text-[0.8rem] text-paper/50">
-          Priya Nathan, VP Marketing
-        </p>
-      </div>
       <span className="mt-8 inline-flex items-center gap-2 font-body text-[0.9rem] font-medium text-green-soft">
-        Read the full case ↗
+        See how AI visibility gets built ↗
       </span>
     </>
   );
@@ -129,24 +144,32 @@ function FeaturedContent() {
 
 function CompactContent({
   tag,
-  client,
   problem,
+  fixes,
   outcome,
 }: {
   tag: string;
-  client: string;
   problem: string;
+  fixes: string[];
   outcome: string;
 }) {
   return (
     <>
       <div>
         <span className="eyebrow text-green-deep">{tag}</span>
-        <p className="mt-5 font-body text-[1.2rem] font-bold text-dark">{client}</p>
-        <p className="mt-2 font-body text-[0.9rem] leading-relaxed text-dark/65">{problem}</p>
+        <p className="mt-5 font-body text-[0.92rem] leading-relaxed text-dark/70">{problem}</p>
+        
+        <div className="mt-5">
+          <p className="eyebrow text-green-deep text-[0.75rem]">What we fixed:</p>
+          <ul className="mt-2 space-y-1 font-body text-[0.82rem] leading-relaxed text-dark/65 list-disc list-inside">
+            {fixes.map((fix, idx) => (
+              <li key={idx}>{fix}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <p className="mt-6 border-t border-dark/10 pt-4 font-body text-[0.92rem] font-medium text-green-deep">
-        {outcome} ↗
+      <p className="mt-6 border-t border-dark/10 pt-4 font-body text-[0.88rem] leading-relaxed text-green-deep">
+        <strong>Result:</strong> {outcome} ↗
       </p>
     </>
   );

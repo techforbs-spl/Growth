@@ -2,9 +2,9 @@ import Link from "next/link";
 import { LogoMark } from "./LogoMark";
 
 const COLUMNS = [
-  { title: "Services", links: ["AI SEO", "Paid Search", "Paid Social", "Website Systems"] },
-  { title: "Company", links: ["Work", "Method", "Team", "Careers"] },
-  { title: "Resources", links: ["Case library", "Reporting sample", "FAQ", "Referrals"] },
+  { title: "Services", links: ["AI SEO", "Google Ads", "Meta Ads", "ChatGPT Ads"] },
+  { title: "Company", links: ["Proof", "How We Work", "Careers"] },
+  { title: "Resources", links: ["FAQ", "Referrals"] },
 ];
 
 export default function Footer() {
@@ -19,7 +19,7 @@ export default function Footer() {
             </Link>
             <p className="mt-5 max-w-[300px] font-body text-[0.88rem] leading-relaxed text-paper/55">
               Performance marketing for B2B companies who report on pipeline,
-              not impressions. Based in Austin.
+              not impressions. We reply within one business day.
             </p>
             <a href="mailto:hello@thegrowthinc.com" className="mt-6 inline-block font-body text-[0.85rem] text-green-soft underline">
               hello@thegrowthinc.com
