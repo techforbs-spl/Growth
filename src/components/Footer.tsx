@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-14 border-b border-paper/10 pb-16 lg:grid-cols-[1.3fr_2fr]">
           <div>
             <Link href="#top" className="flex items-center gap-2.5 font-display text-[1.05rem] font-bold text-paper">
-              <LogoMark size={28} shellColor="#ffffff" />
+              <LogoMark size={28} variant="light" />
               The Growth Inc.
             </Link>
             <p className="mt-5 max-w-[300px] font-body text-[0.88rem] leading-relaxed text-paper/55">

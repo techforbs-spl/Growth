@@ -1,25 +1,73 @@
+import Image from "next/image";
+
+export type LogoVariant =
+  | "dark"
+  | "light"
+  | "white"
+  | "dark-with-name"
+  | "light-with-name"
+  | "white-with-name";
+
 export function LogoMark({
-  size = 30,
-  shellColor = "#202020",
-  arrowColor = "#708238",
+  size = 28,
+  variant,
+  shellColor,
+  className = "",
 }: {
   size?: number;
+  variant?: LogoVariant;
   shellColor?: string;
-  arrowColor?: string;
+  className?: string;
 }) {
+  let selectedVariant = variant || "dark";
+  if (!variant && shellColor) {
+    if (
+      shellColor.toLowerCase() === "#ffffff" ||
+      shellColor.toLowerCase() === "white" ||
+      shellColor.toLowerCase() === "var(--paper)"
+    ) {
+      selectedVariant = "light";
+    }
+  }
+
+  let src = "/logo/dark-grey-green-icon.png";
+  let alt = "The Growth Inc. Icon";
+
+  switch (selectedVariant) {
+    case "light":
+      src = "/logo/white-green-icon.png";
+      break;
+    case "white":
+      src = "/logo/all-white-icon.png";
+      break;
+    case "dark-with-name":
+      src = "/logo/dark-grey-with-name.png";
+      alt = "The Growth Inc. Logo";
+      break;
+    case "light-with-name":
+      src = "/logo/white-green-with-name.png";
+      alt = "The Growth Inc. Logo";
+      break;
+    case "white-with-name":
+      src = "/logo/all-white-with-name.png";
+      alt = "The Growth Inc. Logo";
+      break;
+    default:
+      src = "/logo/dark-grey-green-icon.png";
+      break;
+  }
+
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" fill="none" aria-hidden="true">
-      {/* Rounded octagonal "G" shell */}
-      <path
-        d="M 20,4 H 44 Q 60,4 60,20 Q 60,24 48,24 Q 40,24 40,16 H 24 Q 16,16 16,24 V 40 Q 16,48 24,48 H 40 Q 40,40 48,40 Q 60,40 60,44 Q 60,60 44,60 H 20 Q 4,60 4,44 V 20 Q 4,4 20,4 Z"
-        fill={shellColor}
-      />
-      {/* Rounded Triangle / Arrow sitting in the gap */}
-      <path
-        d="M 36,30 H 54 Q 58,30 58,34 V 52 Q 58,56 55,53 L 34,32 Q 32,30 36,30 Z"
-        fill={arrowColor}
-      />
-    </svg>
+    <Image
+      src={src}
+      alt={alt}
+      width={size}
+      height={size}
+      className={`inline-block object-contain ${className}`}
+      style={{ width: size, height: size }}
+      priority
+    />
   );
 }
+
 
