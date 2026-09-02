@@ -51,7 +51,7 @@ export default function FinalCTA() {
           </Reveal>
 
           <Reveal delay={0.06}>
-            <h2 className="mt-4 font-display text-[2.1rem] font-semibold leading-[1.15] lg:text-[2.8rem]">
+            <h2 className="mt-4 font-display text-[2.1rem] font-bold leading-[1.15] lg:text-[2.8rem] lg:font-extrabold">
               Bring us the problem you are tired of pretending will sort itself out.
             </h2>
           </Reveal>
@@ -74,7 +74,7 @@ export default function FinalCTA() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="mt-6 font-display text-[1.4rem] font-semibold text-paper">
+                  <h3 className="mt-6 font-display text-[1.4rem] font-bold text-paper">
                     Get in Touch
                   </h3>
                   <p className="mt-2 max-w-[320px] font-body text-[0.88rem] text-paper/60 leading-relaxed">

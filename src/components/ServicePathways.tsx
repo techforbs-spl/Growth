@@ -3,7 +3,6 @@ import Reveal from "./Reveal";
 const SERVICES = [
   {
     icon: <IconRadar />,
-    tag: "Primary",
     name: "AI SEO",
     problem: "Your buyers are asking questions. Make sure you are part of the answer.",
     deliverable: "Search has changed. Buyers research across Google, ChatGPT, Perplexity, Gemini and Google AI Overviews. We help your business become easier to discover, easier to understand and easier to trust wherever that research starts. Technical foundations, source-worthy content, entity signals and visibility tracking across every AI platform that matters.",
@@ -11,7 +10,6 @@ const SERVICES = [
   },
   {
     icon: <IconTarget />,
-    tag: "Secondary",
     name: "Google Ads",
     problem: "Google Ads should create customers. Not a very expensive habit.",
     deliverable: "If cost per lead keeps rising or branded traffic eats the budget, you need tighter intent mapping, better tracking and weekly decisions based on what is actually making money. Not another round of random optimisations.",
@@ -19,7 +17,6 @@ const SERVICES = [
   },
   {
     icon: <IconLayers />,
-    tag: "Secondary",
     name: "Meta Ads",
     problem: "Stop paying for attention your sales team cannot use.",
     deliverable: "Meta Ads can build demand before someone knows exactly what they are searching for. We combine clear ICP targeting, creative testing and real sales feedback so the platform learns what a valuable prospect looks like, not just what gets a quick click.",
@@ -27,7 +24,6 @@ const SERVICES = [
   },
   {
     icon: <IconFrame />,
-    tag: "Secondary",
     name: "ChatGPT Ads",
     problem: "Your next customer may ask ChatGPT before they ask Google.",
     deliverable: "Buyers use AI to research problems and shortlist options before they ever fill out a form. We help you build a practical plan for that shift, with clear measurement and a conversion path behind it. No science-fiction promises. Just a clear way to test where AI-led discovery creates a real commercial advantage.",
@@ -39,19 +35,25 @@ export default function ServicePathways() {
   return (
     <section id="services" className="bg-paper py-24 lg:py-32">
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
-        <div className="max-w-[800px]">
+        <div className="text-center max-w-[850px] mx-auto">
           <Reveal>
-            <p className="eyebrow text-green-deep">Pick the problem. The channel comes second.</p>
-            <h2 className="mt-5 font-display text-[2.1rem] font-semibold leading-[1.15] text-dark lg:text-[2.7rem]">
+            <p className="eyebrow text-green-deep text-center">Pick the problem. The channel comes second.</p>
+            <h2 className="mt-5 font-display text-[2.1rem] font-bold leading-[1.15] text-dark lg:text-[2.7rem] lg:font-extrabold text-center">
               One visibility engine. More ways to turn it into customers.
             </h2>
           </Reveal>
           <Reveal delay={0.06}>
-            <p className="mt-6 max-w-[620px] font-body text-[1rem] leading-relaxed text-dark/75">
-              Buyers begin with questions. The question might land in Google, an AI Overview, ChatGPT, Perplexity, Gemini or Copilot. Your visibility needs to meet them there. 
-              <br /><br />
-              We will tell you if a channel is not the answer. It is cheaper than pretending otherwise.
-            </p>
+            <div className="mt-6 max-w-[660px] mx-auto text-left font-body text-[1rem] leading-relaxed text-dark/75 space-y-3">
+              <p>
+                Buyers begin with questions.<br />
+                The question might land in Google, an AI Overview,<br />
+                ChatGPT, Perplexity, Gemini or Copilot.<br />
+                Your visibility needs to meet them there.
+              </p>
+              <p>
+                We will tell you if a channel is not the answer. It is cheaper than pretending otherwise.
+              </p>
+            </div>
           </Reveal>
         </div>
 
@@ -62,9 +64,8 @@ export default function ServicePathways() {
                 href="#book"
                 className="focus-ring group flex h-full flex-col rounded-3xl border border-dark/10 bg-white/40 p-7 transition-all hover:-translate-y-1.5 hover:bg-white/70 hover:shadow-[0_25px_50px_-25px_rgba(43,31,46,0.25)]"
               >
-                <div className="flex items-center justify-between text-green-deep">
+                <div className="flex items-center text-green-deep">
                   {s.icon}
-                  <span className="eyebrow text-dark/35">{s.tag}</span>
                 </div>
                 <h3 className="mt-6 font-body text-[1.2rem] font-semibold text-dark">{s.name}</h3>
                 <p className="mt-3 font-body text-[0.87rem] leading-relaxed text-dark/65 min-h-[50px]">{s.problem}</p>

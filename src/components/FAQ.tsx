@@ -21,7 +21,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-[860px] px-6 lg:px-10">
         <Reveal className="text-center flex flex-col items-center">
           <p className="eyebrow text-green-deep text-center">Before you reach out</p>
-          <h2 className="mt-5 mx-auto max-w-[620px] font-display text-[2rem] font-semibold leading-[1.15] text-dark lg:text-[2.4rem] text-center">
+          <h2 className="mt-5 mx-auto max-w-[620px] font-display text-[2rem] font-bold leading-[1.15] text-dark lg:text-[2.4rem] lg:font-extrabold text-center">
             Straight answers are more useful than a big sales pitch.
           </h2>
         </Reveal>

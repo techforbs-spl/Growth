@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import CredibilityBar from "@/components/CredibilityBar";
 import ResultsSnapshot from "@/components/ResultsSnapshot";
 import CaseStudies from "@/components/CaseStudies";
 import ServicePathways from "@/components/ServicePathways";
@@ -18,7 +17,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <CredibilityBar />
         <ResultsSnapshot />
         <CaseStudies />
         <ServicePathways />

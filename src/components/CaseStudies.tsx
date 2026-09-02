@@ -8,15 +8,17 @@ export default function CaseStudies() {
   return (
     <section id="work" className="bg-paper-deep/50 py-24 lg:py-32">
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+        <div className="text-center max-w-[780px] mx-auto">
           <Reveal>
-            <p className="eyebrow text-green-deep">The work speaks louder than the pitch</p>
-            <h2 className="mt-5 max-w-[620px] font-display text-[2rem] font-semibold leading-[1.15] text-dark lg:text-[2.5rem]">
+            <p className="eyebrow text-green-deep text-center">The work speaks louder than the pitch</p>
+            <h2 className="mt-5 font-display text-[2rem] font-bold leading-[1.15] text-dark lg:text-[2.5rem] lg:font-extrabold text-center">
               Different businesses. Different starting points. One goal: get growth moving and keep it moving.
             </h2>
           </Reveal>
           <Reveal delay={0.06}>
-            <SecondaryCTA href="#book">See the proof</SecondaryCTA>
+            <div className="mt-6 flex justify-center">
+              <SecondaryCTA href="#book">See the proof</SecondaryCTA>
+            </div>
           </Reveal>
         </div>
 
@@ -34,6 +36,8 @@ export default function CaseStudies() {
               <TiltCard className="flex flex-col justify-between rounded-3xl border border-dark/10 bg-paper p-7">
                 <CompactContent
                   tag="Home and Housing E-commerce · Collection Page SEO · US and Australia"
+                  imageSrc="/case-studies/shopify-revenue.png"
+                  imageAlt="Shopify revenue growth graph"
                   problem="A US-based home and housing products brand had collection pages that had been live for years and were contributing almost nothing to organic traffic. Faceted navigation was creating duplicate URLs without canonical handling. No internal linking connected editorial content to commercial pages. Keyword cannibalization was suppressing every collection page at the same time."
                   fixes={[
                     "Collection page content rebuilt around commercial buyer intent",
@@ -50,6 +54,8 @@ export default function CaseStudies() {
               <TiltCard className="flex flex-col justify-between rounded-3xl border border-dark/10 bg-paper p-7">
                 <CompactContent
                   tag="On-demand Home Healthcare · Technical SEO + AI SEO + Google Ads · Dubai, UAE"
+                  imageSrc="/case-studies/healthcare-dubai.png"
+                  imageAlt="Google Search Console impressions and Google AI Overview rank"
                   problem="An on-demand home healthcare service in Dubai was sitting at an average search position of 13.1 across its highest-value queries. 726,000 impressions in six months but a 0.5% CTR because it was ranking page two on every term that mattered. The site had no medical schema, no structured credential signals and no content built for how Google constructs AI Overview recommendations."
                   fixes={[
                     "MedicalBusiness, Physician and LocalBusiness schema implemented",
@@ -111,7 +117,17 @@ function FeaturedContent() {
         <div className="flex items-center justify-between">
           <span className="eyebrow text-green-soft">Outsourced Accounting and Bookkeeping · Technical SEO + AI SEO · Australia and Canada</span>
         </div>
-        <p className="mt-8 max-w-[520px] font-body text-[0.95rem] leading-relaxed text-paper/75">
+
+        <div className="mt-6 overflow-hidden rounded-2xl border border-paper/15 bg-black/40 shadow-md">
+          <img
+            src="/case-studies/accounting-canada.png"
+            alt="AI Search recommendation showing Outsourced Accounting client in Canada"
+            className="w-full h-auto object-contain"
+            loading="lazy"
+          />
+        </div>
+
+        <p className="mt-6 max-w-[520px] font-body text-[0.95rem] leading-relaxed text-paper/75">
           An outsourced accounting and bookkeeping firm serving Australian and Canadian markets came with a site search engines could barely crawl. Pages were not indexed. Internal linking did not exist. And the business was completely absent from every AI search tool buyers were using to find providers.
         </p>
         <div className="mt-6">
@@ -126,11 +142,11 @@ function FeaturedContent() {
         </div>
         <div className="mt-8 grid grid-cols-2 gap-6 border-t border-paper/10 pt-6">
           <div>
-            <p className="tabular font-display text-[1.8rem] font-semibold text-green-soft">Under 5</p>
+            <p className="tabular font-display text-[1.8rem] font-extrabold text-green-soft">Under 5</p>
             <p className="mt-1 font-body text-[0.8rem] text-paper/55">Months to first AI citation</p>
           </div>
           <div>
-            <p className="tabular font-display text-[1.8rem] font-semibold text-green-soft">~25%</p>
+            <p className="tabular font-display text-[1.8rem] font-extrabold text-green-soft">~25%</p>
             <p className="mt-1 font-body text-[0.8rem] text-paper/55">Increase in inbound enquiries after AI visibility</p>
           </div>
         </div>
@@ -144,11 +160,15 @@ function FeaturedContent() {
 
 function CompactContent({
   tag,
+  imageSrc,
+  imageAlt,
   problem,
   fixes,
   outcome,
 }: {
   tag: string;
+  imageSrc?: string;
+  imageAlt?: string;
   problem: string;
   fixes: string[];
   outcome: string;
@@ -157,6 +177,18 @@ function CompactContent({
     <>
       <div>
         <span className="eyebrow text-green-deep">{tag}</span>
+
+        {imageSrc && (
+          <div className="mt-5 overflow-hidden rounded-2xl border border-dark/10 bg-paper-deep/60 shadow-sm">
+            <img
+              src={imageSrc}
+              alt={imageAlt || tag}
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+        )}
+
         <p className="mt-5 font-body text-[0.92rem] leading-relaxed text-dark/70">{problem}</p>
         
         <div className="mt-5">

@@ -51,7 +51,7 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="focus-ring group relative font-body text-[0.9rem] text-dark/75"
+              className="focus-ring group relative font-body text-[0.9rem] font-medium text-dark/75"
             >
               {item.label}
               <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-green transition-all duration-300 group-hover:w-full" />

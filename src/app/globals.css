@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -29,9 +30,9 @@
   --color-green-soft: var(--green-soft);
   --color-green-tint: var(--green-tint);
 
-  --font-display: "Rubik One", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -49,8 +50,8 @@ body {
 }
 
 .font-display {
-  font-weight: 400 !important;
-  letter-spacing: 0.01em;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 ::selection {
@@ -59,11 +60,11 @@ body {
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .tabular {
