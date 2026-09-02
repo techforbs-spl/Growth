@@ -53,11 +53,13 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.7}>
-          <div className="mx-auto mt-16 grid max-w-[840px] grid-cols-2 gap-8 border-t border-dark/10 pt-8 sm:grid-cols-4">
-            <Stat icon={Briefcase} value="40+" label="Projects Delivered" />
-            <Stat icon={Brain} value="7+" label="AI SEO Engagements" />
-            <Stat icon={TrendingUp} value="~25%" label="Average Enquiry Increase" />
-            <Stat icon={CalendarCheck} value="Under 5 Months" label="To First AI Citation" />
+          <div className="mx-auto mt-20 max-w-[940px] border-t border-dark/12 pt-10">
+            <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:divide-x sm:divide-dark/12">
+              <Stat icon={Briefcase} value="40+" label="Projects Delivered" />
+              <Stat icon={Brain} value="7+" label="AI SEO Engagements" />
+              <Stat icon={TrendingUp} value="~25%" label="Average Enquiry Increase" />
+              <Stat icon={CalendarCheck} value="Under 5 Months" label="To First AI Citation" />
+            </div>
           </div>
         </Reveal>
       </div>
@@ -76,18 +78,18 @@ function Stat({
 }) {
   const isLong = value.length > 8;
   return (
-    <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+    <div className="flex flex-col items-center text-center px-3 sm:px-4">
       <div className="mb-3 text-green-deep">
-        <Icon className="h-5 w-5" strokeWidth={1.75} />
+        <Icon className="h-6 w-6" strokeWidth={1.5} />
       </div>
       <p className={`tabular font-display font-extrabold text-dark leading-none ${
         isLong 
-          ? "text-[1.05rem] sm:text-[1.2rem] lg:text-[1.4rem] whitespace-nowrap" 
-          : "text-[1.4rem]"
+          ? "text-[1.2rem] sm:text-[1.3rem] lg:text-[1.5rem] whitespace-nowrap" 
+          : "text-[2rem] lg:text-[2.3rem]"
       }`}>
         {value}
       </p>
-      <p className="mt-2.5 font-body text-[0.78rem] leading-snug text-dark/55">
+      <p className="mt-2.5 max-w-[160px] font-body text-[0.82rem] leading-snug text-dark/60">
         {label}
       </p>
     </div>

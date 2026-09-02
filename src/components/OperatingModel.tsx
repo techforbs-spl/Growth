@@ -1,4 +1,4 @@
-import { Handshake, UserCheck, Activity, Eye } from "lucide-react";
+import { Handshake, UserCheck, LineChart, Eye } from "lucide-react";
 import Reveal from "./Reveal";
 
 const PILLARS = [
@@ -13,7 +13,7 @@ const PILLARS = [
     body: "No polished sales call followed by a mystery hand-off. Senior people stay close enough to explain the work, defend the trade-offs and make the next decision with you.",
   },
   {
-    icon: Activity,
+    icon: LineChart,
     title: "Every test leaves a paper trail.",
     body: "We log the hypothesis, the result and the next action. Wins are useful. Failed tests are useful too, especially when they stop you repeating the same bad assumption next quarter.",
   },

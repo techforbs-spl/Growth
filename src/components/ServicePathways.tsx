@@ -43,7 +43,7 @@ export default function ServicePathways() {
             </h2>
           </Reveal>
           <Reveal delay={0.06}>
-            <div className="mt-6 max-w-[660px] mx-auto text-left font-body text-[1rem] leading-relaxed text-dark/75 space-y-3">
+            <div className="mt-6 max-w-[660px] mx-auto text-center font-body text-[1rem] leading-relaxed text-dark/75 space-y-3">
               <p>
                 Buyers begin with questions.<br />
                 The question might land in Google, an AI Overview,<br />
