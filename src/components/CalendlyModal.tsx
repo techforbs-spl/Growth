@@ -2,10 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/config/site";
 
 export default function CalendlyModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [iframeLoading, setIframeLoading] = useState(true);
+
+  // Clean base URL and append dark/olive theme parameters + email
+  const baseUrl = siteConfig.calendlyUrl.split("?")[0];
+  const calendlySrc = `${baseUrl}?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=202020&text_color=ffffff&primary_color=708238${
+    siteConfig.email ? `&email=${encodeURIComponent(siteConfig.email)}` : ""
+  }`;
 
   useEffect(() => {
     const handleOpen = () => {
@@ -71,7 +78,7 @@ export default function CalendlyModal() {
                 </div>
               )}
               <iframe
-                src="https://calendly.com/beastbhavu/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=202020&text_color=ffffff&primary_color=708238"
+                src={calendlySrc}
                 width="100%"
                 height="100%"
                 onLoad={() => setIframeLoading(false)}

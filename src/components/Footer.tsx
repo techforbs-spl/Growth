@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "./LogoMark";
+import { siteConfig } from "@/config/site";
 
 const COLUMNS = [
   { title: "Services", links: ["AI SEO", "Google Ads", "Meta Ads", "ChatGPT Ads"] },
@@ -15,14 +16,14 @@ export default function Footer() {
           <div>
             <Link href="#top" className="flex items-center gap-2.5 font-display text-[1.05rem] font-bold text-paper">
               <LogoMark size={28} variant="light" />
-              The Growth Inc.
+              {siteConfig.name}
             </Link>
             <p className="mt-5 max-w-[300px] font-body text-[0.88rem] leading-relaxed text-paper/55">
               Performance marketing for B2B companies who report on pipeline,
               not impressions. We reply within one business day.
             </p>
-            <a href="mailto:hello@thegrowthinc.com" className="mt-6 inline-block font-body text-[0.85rem] text-green-soft underline">
-              hello@thegrowthinc.com
+            <a href={`mailto:${siteConfig.email}`} className="mt-6 inline-block font-body text-[0.85rem] text-green-soft underline">
+              {siteConfig.email}
             </a>
           </div>
 

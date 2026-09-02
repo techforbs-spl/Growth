@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Reveal from "./Reveal";
+import { siteConfig } from "@/config/site";
 
 export default function FinalCTA() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -154,7 +155,7 @@ export default function FinalCTA() {
 
         <Reveal delay={0.3}>
           <p className="mt-8 text-center font-body text-[0.78rem] text-paper/45">
-            hello@thegrowthinc.com · We reply within one business day
+            {siteConfig.email} · We reply within one business day
           </p>
         </Reveal>
       </div>
