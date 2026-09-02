@@ -118,21 +118,21 @@ function FeaturedContent() {
           <span className="eyebrow text-green-soft">Outsourced Accounting and Bookkeeping · Technical SEO + AI SEO · Australia and Canada</span>
         </div>
 
-        <div className="mt-6 overflow-hidden rounded-2xl border border-paper/15 bg-black/40 shadow-md">
+        <div className="mt-5 max-w-[460px] overflow-hidden rounded-xl border border-paper/15 bg-black/40 shadow-sm">
           <img
             src="/case-studies/accounting-canada.png"
             alt="AI Search recommendation showing Outsourced Accounting client in Canada"
-            className="w-full h-auto object-contain"
+            className="w-full max-h-[170px] sm:max-h-[200px] object-cover object-top"
             loading="lazy"
           />
         </div>
 
-        <p className="mt-6 max-w-[520px] font-body text-[0.95rem] leading-relaxed text-paper/75">
+        <p className="mt-5 max-w-[520px] font-body text-[0.95rem] leading-relaxed text-paper/75">
           An outsourced accounting and bookkeeping firm serving Australian and Canadian markets came with a site search engines could barely crawl. Pages were not indexed. Internal linking did not exist. And the business was completely absent from every AI search tool buyers were using to find providers.
         </p>
-        <div className="mt-6">
+        <div className="mt-5">
           <p className="eyebrow text-green-soft text-[0.75rem]">What we fixed:</p>
-          <ul className="mt-3.5 space-y-2 font-body text-[0.85rem] leading-relaxed text-paper/60 list-disc list-inside">
+          <ul className="mt-3 space-y-1.5 font-body text-[0.85rem] leading-relaxed text-paper/60 list-disc list-inside">
             <li>Crawlability and indexation gaps across all service pages</li>
             <li>Internal linking architecture connecting service pages, location pages and supporting content</li>
             <li>Organisation and Service schema so AI systems could identify and trust the business as a real entity</li>
@@ -140,7 +140,7 @@ function FeaturedContent() {
             <li>Regional credibility signals for Australian and Canadian markets</li>
           </ul>
         </div>
-        <div className="mt-8 grid grid-cols-2 gap-6 border-t border-paper/10 pt-6">
+        <div className="mt-6 grid grid-cols-2 gap-6 border-t border-paper/10 pt-5">
           <div>
             <p className="tabular font-display text-[1.8rem] font-extrabold text-green-soft">Under 5</p>
             <p className="mt-1 font-body text-[0.8rem] text-paper/55">Months to first AI citation</p>
@@ -151,7 +151,7 @@ function FeaturedContent() {
           </div>
         </div>
       </div>
-      <span className="mt-8 inline-flex items-center gap-2 font-body text-[0.9rem] font-medium text-green-soft">
+      <span className="mt-7 inline-flex items-center gap-2 font-body text-[0.9rem] font-medium text-green-soft">
         See how AI visibility gets built ↗
       </span>
     </>
@@ -179,19 +179,19 @@ function CompactContent({
         <span className="eyebrow text-green-deep">{tag}</span>
 
         {imageSrc && (
-          <div className="mt-5 overflow-hidden rounded-2xl border border-dark/10 bg-paper-deep/60 shadow-sm">
+          <div className="mt-4 max-w-[420px] overflow-hidden rounded-xl border border-dark/10 bg-paper-deep/60 shadow-xs">
             <img
               src={imageSrc}
               alt={imageAlt || tag}
-              className="w-full h-auto object-contain"
+              className="w-full max-h-[145px] sm:max-h-[165px] object-cover object-top"
               loading="lazy"
             />
           </div>
         )}
 
-        <p className="mt-5 font-body text-[0.92rem] leading-relaxed text-dark/70">{problem}</p>
+        <p className="mt-4 font-body text-[0.92rem] leading-relaxed text-dark/70">{problem}</p>
         
-        <div className="mt-5">
+        <div className="mt-4">
           <p className="eyebrow text-green-deep text-[0.75rem]">What we fixed:</p>
           <ul className="mt-2 space-y-1 font-body text-[0.82rem] leading-relaxed text-dark/65 list-disc list-inside">
             {fixes.map((fix, idx) => (
@@ -200,7 +200,7 @@ function CompactContent({
           </ul>
         </div>
       </div>
-      <p className="mt-6 border-t border-dark/10 pt-4 font-body text-[0.88rem] leading-relaxed text-green-deep">
+      <p className="mt-5 border-t border-dark/10 pt-3.5 font-body text-[0.88rem] leading-relaxed text-green-deep">
         <strong>Result:</strong> {outcome} ↗
       </p>
     </>

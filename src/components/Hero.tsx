@@ -18,13 +18,13 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-[1160px] px-6 lg:px-10">
         <Reveal>
-          <p className="eyebrow mb-6 flex items-center justify-center gap-2 text-green-deep text-center !text-[0.88rem] sm:!text-[0.95rem] !tracking-[0.06em]">
-            <span className="h-[6px] w-[6px] rounded-full bg-green-soft" />
+          <p className="eyebrow mb-5 sm:mb-6 flex items-center justify-center gap-2 text-green-deep text-center !text-[0.78rem] sm:!text-[0.92rem] !tracking-[0.06em]">
+            <span className="h-[5px] w-[5px] sm:h-[6px] sm:w-[6px] rounded-full bg-green-soft" />
             For businesses tired of being invisible when buyers search for what you do
           </p>
         </Reveal>
 
-        <h1 className="mx-auto max-w-[860px] text-center font-display text-[2.7rem] font-bold leading-[1.12] text-dark lg:text-[4.0rem] lg:font-extrabold">
+        <h1 className="mx-auto max-w-[860px] text-center font-display text-[1.95rem] sm:text-[2.8rem] md:text-[3.4rem] lg:text-[4.0rem] font-bold leading-[1.12] text-dark lg:font-extrabold">
           <span className="block">When buyers ask AI</span>
           <span className="block">Who to Trust,</span>
           <span className="block">Make sure your name</span>
@@ -32,7 +32,7 @@ export default function Hero() {
         </h1>
 
         <Reveal delay={0.5}>
-          <div className="mx-auto mt-8 max-w-[700px] text-center font-body text-[1.08rem] leading-relaxed text-dark/75 space-y-3">
+          <div className="mx-auto mt-6 sm:mt-8 max-w-[700px] text-center font-body text-[0.96rem] sm:text-[1.08rem] leading-relaxed text-dark/75 space-y-2.5 sm:space-y-3">
             <p>Buyers are no longer only typing into Google.</p>
             <p>
               They ask ChatGPT, Perplexity, Gemini and Google AI Overviews<br className="hidden sm:inline" />{" "}
