@@ -3,5 +3,5 @@ export const siteConfig = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "thegrowthincc@gmail.com",
   calendlyUrl:
     process.env.NEXT_PUBLIC_CALENDLY_URL ||
-    "https://calendly.com/beastbhavu/30min",
+    "https://calendly.com/thegrowthincc/30min",
 };
