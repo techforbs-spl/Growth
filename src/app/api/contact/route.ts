@@ -98,10 +98,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, method: "resend" });
     }
 
-    // 2. Try SMTP / Nodemailer (e.g. Gmail App Password) if configured
+    // 2. Try SMTP / Nodemailer (Hostinger, Gmail, Custom Domain) if configured
     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+      const defaultHost = process.env.SMTP_USER.includes("@gmail.com")
+        ? "smtp.gmail.com"
+        : "smtp.hostinger.com";
+
       const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST || "smtp.gmail.com",
+        host: process.env.SMTP_HOST || defaultHost,
         port: parseInt(process.env.SMTP_PORT || "465"),
         secure: process.env.SMTP_SECURE !== "false",
         auth: {
@@ -110,8 +114,10 @@ export async function POST(req: Request) {
         },
       });
 
+      const senderEmail = process.env.SMTP_FROM || process.env.SMTP_USER;
+
       await transporter.sendMail({
-        from: `"The Growth Inc." <${process.env.SMTP_USER}>`,
+        from: `"The Growth Inc." <${senderEmail}>`,
         to: recipientEmail,
         replyTo: email,
         subject: subject,
