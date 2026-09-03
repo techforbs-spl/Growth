@@ -99,22 +99,37 @@ export async function POST(req: Request) {
     }
 
     // 2. Try SMTP / Nodemailer (Hostinger, Gmail, Custom Domain) if configured
-    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-      const defaultHost = process.env.SMTP_USER.includes("@gmail.com")
-        ? "smtp.gmail.com"
-        : "smtp.hostinger.com";
+    const hasSmtp =
+      Boolean(process.env.SMTP_USER) &&
+      Boolean(process.env.SMTP_PASS) &&
+      process.env.SMTP_PASS!.trim().length > 0 &&
+      process.env.SMTP_USER !== "your-email@yourdomain.com" &&
+      process.env.SMTP_PASS !== "your-hostinger-password";
+
+    if (hasSmtp) {
+      const smtpUser = process.env.SMTP_USER!.trim();
+      const smtpPass = process.env.SMTP_PASS!.trim();
+      const smtpHost = (
+        process.env.SMTP_HOST ||
+        (smtpUser.includes("@gmail.com") ? "smtp.gmail.com" : "smtp.hostinger.com")
+      ).trim();
+      const smtpPort = parseInt(process.env.SMTP_PORT || "465");
+      const isSecure = smtpPort === 465;
 
       const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST || defaultHost,
-        port: parseInt(process.env.SMTP_PORT || "465"),
-        secure: process.env.SMTP_SECURE !== "false",
+        host: smtpHost,
+        port: smtpPort,
+        secure: isSecure,
         auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
+          user: smtpUser,
+          pass: smtpPass,
+        },
+        tls: {
+          rejectUnauthorized: false,
         },
       });
 
-      const senderEmail = process.env.SMTP_FROM || process.env.SMTP_USER;
+      const senderEmail = (process.env.SMTP_FROM || smtpUser).trim();
 
       await transporter.sendMail({
         from: `"The Growth Inc." <${senderEmail}>`,
