@@ -6,6 +6,8 @@ import { siteConfig } from "@/config/site";
 
 export default function FinalCTA() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,10 +24,32 @@ export default function FinalCTA() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API form submission
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Failed to send inquiry.");
+      }
+
+      setFormSubmitted(true);
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setErrorMessage(
+        err?.message || "Something went wrong. Please try again or email us directly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -140,12 +164,28 @@ export default function FinalCTA() {
                     />
                   </div>
 
+                  {errorMessage && (
+                    <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-center font-body text-[0.85rem] text-red-300">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="focus-ring mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-green px-6 py-4 font-body text-[0.95rem] font-semibold text-paper cursor-pointer transition-[background-color] duration-200 ease-out hover:bg-green-deep active:scale-[0.99]"
+                    disabled={isSubmitting}
+                    className="focus-ring mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-green px-6 py-4 font-body text-[0.95rem] font-semibold text-paper cursor-pointer transition-[background-color] duration-200 ease-out hover:bg-green-deep active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Get in Touch
-                    <span aria-hidden="true">↗</span>
+                    {isSubmitting ? (
+                      <>
+                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-paper border-t-transparent" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Get in Touch
+                        <span aria-hidden="true">↗</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}
