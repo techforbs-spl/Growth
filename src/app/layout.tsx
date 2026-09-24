@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ProfessionalServiceJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "The Growth Inc. — Marketing at a human pace",
@@ -12,7 +13,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <ProfessionalServiceJsonLd />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );
 }
+

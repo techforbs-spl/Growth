@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import SubpageHeader from "@/components/SubpageHeader";
 import Hero from "@/components/Hero";
 import ResultsSnapshot from "@/components/ResultsSnapshot";
 import CaseStudies from "@/components/CaseStudies";
@@ -8,13 +8,13 @@ import ProcessJourney from "@/components/ProcessJourney";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
-import Footer from "@/components/Footer";
+import SubpageFooter from "@/components/SubpageFooter";
 import CalendlyModal from "@/components/CalendlyModal";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <SubpageHeader />
       <main>
         <Hero />
         <ResultsSnapshot />
@@ -26,7 +26,7 @@ export default function Home() {
         <FAQ />
         <FinalCTA />
       </main>
-      <Footer />
+      <SubpageFooter />
       <CalendlyModal />
     </>
   );
