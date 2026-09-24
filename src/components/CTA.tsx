@@ -7,10 +7,12 @@ export function PrimaryCTA({
   children,
   className = "",
   href = "#book",
+  onClick,
 }: {
   children: ReactNode;
   className?: string;
   href?: string;
+  onClick?: () => void;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -29,6 +31,7 @@ export function PrimaryCTA({
       e.preventDefault();
       window.dispatchEvent(new CustomEvent("open-calendly"));
     }
+    onClick?.();
   };
 
   return (
